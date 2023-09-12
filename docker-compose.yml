@@ -1,0 +1,32 @@
+version: '3'
+services:
+  php:
+    image: php:7.4-apache
+    build: .
+    container_name: php-container1
+    ports:
+      - "8080:80"
+    volumes:
+      - ./php-code/Simon-dice-main:/var/www/html/
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container1
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      # MYSQL_USER: ${MYSQL_USER}
+      # MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-container1
+    ports:
+      - "8083:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
