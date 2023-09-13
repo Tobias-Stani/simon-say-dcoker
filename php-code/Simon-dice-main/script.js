@@ -95,7 +95,7 @@ class Simon {
             this.buttonSounds[value].play();
             if(this.round === this.userPosition) {
                 this.updateRound(this.round + 1);
-                this.speed /= 1.02;
+                this.speed /= 1.10;
                 this.isGameOver();
             } else {
                 this.userPosition++;
