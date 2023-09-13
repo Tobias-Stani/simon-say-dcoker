@@ -12,7 +12,7 @@ Esta guía te proporciona los pasos necesarios para configurar y ejecutar este p
 
    ```shell
    git clone https://github.com/Tobias-Stani/simon-say-dcoker.git
-
+   ```
 
 ## Paso 2: Configurar la Base de Datos
 
@@ -20,7 +20,17 @@ Esta guía te proporciona los pasos necesarios para configurar y ejecutar este p
 
 2. Busca el archivo `simon.sql` y copia todo su contenido.
 
-## Paso 3: Crear una Base de Datos
+## Paso 3: Iniciar el contenedor con Apache, MySQL y PHP
+
+1. Ejecuta el siguiente comando para inciar el contendeor que contiene apache, mysql y php
+
+   ```shell
+
+  docker-compose up -d 
+
+   ```
+
+## Paso 4: Crear una Base de Datos
 
 1. En la base de datos llamada pegamos el archivo de simon.sql
 
@@ -62,4 +72,4 @@ mysql_database=nombre_de_la_base_de_datos
 
    ```
 
-   Asegurate de reemplazar la clave y el nombre de la bd con los valores adecuados, estas variables son necesarias para ejecutar ell contenedor correctamenete.
+   Asegurate de reemplazar la clave y el nombre de la bd con los valores adecuados, estas variables son necesarias para ejecutar ell contenedor correctamenete
