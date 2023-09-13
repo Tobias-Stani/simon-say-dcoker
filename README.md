@@ -43,4 +43,23 @@ $nameDb = 'simon';
 
 ?>
 ```
-## Paso 6: A DISFRUTAR!!
+## Paso 6: IMPORTANTE
+
+ Como ultimo paso, asegurate de crear un archivo '.env' en la raiz del proyecto que contenga ls siguientes variables 
+
+ ```shell
+mysql_root_password=contraseña_de_root
+mysql_database=nombre_de_la_base_de_datos
+
+
+```
+   Si es necesario, podes detener el contenedor usando el siguiente comando 
+
+   ```shell
+
+   docker-compose down 
+
+
+   ```
+
+   Asegurate de reemplazar la clave y el nombre de la bd con los valores adecuados, estas variables son necesarias para ejecutar ell contenedor correctamenete.
