@@ -11,7 +11,7 @@ Esta guía te proporciona los pasos necesarios para configurar y ejecutar este p
 1. Abre una terminal y ejecuta el siguiente comando para clonar el repositorio de GitHub:
 
    ```shell
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/Tobias-Stani/simon-say-dcoker.git
 
 
 ## Paso 2: Configurar la Base de Datos
