@@ -1,8 +1,8 @@
 <?php
 
-$nameServer = ''; 
-$nameUser = '';
+$nameServer = 'localhost'; 
+$nameUser = 'root';
 $clave = '';
-$nameDb = '';
+$nameDb = 'simon';
 
 ?>
