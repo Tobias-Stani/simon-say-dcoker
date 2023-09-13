@@ -26,11 +26,9 @@ Esta guía te proporciona los pasos necesarios para configurar y ejecutar este p
 
 1. Ejecuta el siguiente comando para inciar el contendeor que contiene apache, mysql y php
 
-   ```shell
-
-  docker-compose up -d 
-
-   ```
+```shell
+docker-compose up -d app
+```
 
 ## Paso 4: Crear una Base de Datos
 
@@ -46,7 +44,6 @@ Esta guía te proporciona los pasos necesarios para configurar y ejecutar este p
 ## Ejemplo
 
 ```php
-
 <?php
 
 $nameServer = 'Nombre del servidor de la bd'; 
@@ -63,16 +60,11 @@ $nameDb = 'simon';
  ```shell
 mysql_root_password=contraseña_de_root
 mysql_database=nombre_de_la_base_de_datos
-
-
 ```
    Si es necesario, podes detener el contenedor usando el siguiente comando 
 
    ```shell
-
    docker-compose down 
-
-
    ```
 
    Asegurate de reemplazar la clave y el nombre de la bd con los valores adecuados, estas variables son necesarias para ejecutar ell contenedor correctamenete
