@@ -1,32 +1,31 @@
-version: '3.8'
-
+version: '3'
 services:
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: "1234"
-      MYSQL_DATABASE: "simon"
-      MYSQL_USER: "tobi"
-      MYSQL_PASSWORD: "1234"
-    volumes:
-      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - "3306:3306"
-
   php:
-    image: php:latest
-    volumes:
-      - ./php_code:/var/www/html
-    ports:
-      - "80:80"
-    depends_on:
-      - mysql
-
-  apache:
-    image: httpd:latest
-    volumes:
-      - ./php_code:/usr/local/apache2/htdocs/
+    image: php:7.4-apache
+    container_name: php-container
     ports:
       - "8080:80"
-    depends_on:
-      - php
+    volumes:
+      - ./php-code:/var/www/html/
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234" 
+      MYSQL_DATABASE: "simon" 
+      MYSQL_USER: "root"  
+      MYSQL_PASSWORD: "1234"  
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql  
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-container
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: "1234"  
