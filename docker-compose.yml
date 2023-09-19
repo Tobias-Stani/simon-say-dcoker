@@ -7,6 +7,8 @@ services:
       - "8080:80"
     volumes:
       - ./php-code:/var/www/html/
+    links:
+      - mysql:mysqldb
 
   mysql:
     image: mysql:5.7
@@ -15,7 +17,7 @@ services:
       MYSQL_ROOT_PASSWORD: "1234" 
       MYSQL_DATABASE: "simon"  
       MYSQL_USER: "root"  
-      MYSQL_PASSWORD: "1234"  
+      MYSQL_PASSWORD: "1234" 
     volumes:
       - ./mysql-data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/simon.sql  
@@ -28,4 +30,4 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: "1234" 
+      MYSQL_ROOT_PASSWORD: "1234"
