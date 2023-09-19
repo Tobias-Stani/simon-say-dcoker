@@ -1,70 +1,32 @@
-# Guía de Configuración y Ejecución
+# Simon Dice
 
-Esta guía te proporciona los pasos necesarios para configurar y ejecutar este proyecto. Asegúrate de seguir cada paso en el orden especificado.
 
-## Requisitos Previos
 
-- **Docker**: Asegúrate de tener Docker y Docker Compose instalados en tu sistema. Puedes descargarlos e instalarlos desde [Docker's official website](https://www.docker.com/get-started).
+## Instrucciones de Instalación
 
-## Paso 1: Clonar el Repositorio
+### 1. Clonar Repositorio
 
-1. Abre una terminal y ejecuta el siguiente comando para clonar el repositorio de GitHub:
+Para empezar, clona este repositorio en tu máquina local:
 
-   ```shell
+```bash
+git clone https://github.com/Tobias-Stani/simon-say-dcoker.git
+```
+### 2. Iniciar el Docker
 
-   git clone https://github.com/Tobias-Stani/simon-say-dcoker.git
+Asegúrate de tener Docker instalado en tu máquina. Luego, ejecuta el siguiente comando para iniciar el contenedor Docker para este proyecto:
 
-   ```
-
-## Paso 2: Configurar la Base de Datos
-
-1. Abre una terminal y navega hasta la carpeta `php-code`.
-
-2. Busca el archivo `simon.sql` y copia todo su contenido.
-
-## Paso 3: Iniciar el contenedor con Apache, MySQL y PHP
-
-1. Ejecuta el siguiente comando para inciar el contendeor que contiene apache, mysql y php
-
-```shell
-docker-compose up -d app
+```bash
+docker-compose up -d
 ```
 
-## Paso 4: Crear una Base de Datos
+### 3. Crear la Base de Datos en phpMyAdmin
 
-1. En la base de datos llamada pegamos el archivo de simon.sql
+Una vez el docker este levantado accede a phpMyAdmin en tu navegador web visitando http://localhost:8081. Inicia sesión con las credenciales predeterminadas (si aplican) o las que hayas configurado. Luego, sigue estos pasos:
 
+a. Crea una nueva base de datos llamada simon.
 
-## Paso 5: Configurar la conexion a la base de datos
+b. Selecciona la base de datos simon y ve a la pestaña "Importar". Sube el archivo simon.sql y ejecuta la importación.
 
-1. Una vez que el contenedor de la base de datos este en funcionamiento, buscamos en la carpeta 'php-code' el archivo 'dbConfig.php'
+### 4. ¡A Jugar y Disfrutar el Juego!
 
-2. Abri el archivo y actualiza los siguientes valores con la informacion correspondiente al contenedor de la base de datos que creaste en el paso 2 
-
-## Ejemplo
-
-```php
-<?php
-
-$nameServer = 'Nombre del servidor de la bd'; 
-$nameUser = 'Nombre de usuario';
-$clave = 'Clave de la bd';
-$nameDb = 'simon';
-
-?>
-```
-## Paso 6: IMPORTANTE
-
- Como ultimo paso, asegurate de crear un archivo '.env' en la raiz del proyecto que contenga ls siguientes variables 
-
- ```shell
-mysql_root_password=contraseña_de_root
-mysql_database=nombre_de_la_base_de_datos
-```
-   Si es necesario, podes detener el contenedor usando el siguiente comando 
-
-   ```shell
-   docker-compose down 
-   ```
-
-   Asegurate de reemplazar la clave y el nombre de la bd con los valores adecuados, estas variables son necesarias para ejecutar ell contenedor correctamenete
+El juego está listo para ser jugado. Accede al juego a través de tu navegador web visitando http://localhost:8080 y diviértete jugando.
