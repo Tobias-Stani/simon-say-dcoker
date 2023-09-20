@@ -25,7 +25,7 @@ Una vez el docker este levantado accede a phpMyAdmin en tu navegador web visitan
 
 a. Crea una nueva base de datos llamada simon.
 
-b. En la base de datos llamada simon ve a la pesta pestaña importar
+b. En la base de datos llamada simon ve a la pestaña importar
 
 c. Importar el archivo usuarios.sql que se encuentra en la carpeta "sql"
 
