@@ -40,7 +40,6 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `rondas_jugadas`, `veces_gano`, `veces_perdio`) VALUES
-(1, 'kartitob', 3, 1, 2),
 (2, 'tobi', 6, 1, 5);
 
 --
