@@ -1,8 +1,8 @@
 <?php
 
-$nameServer = 'localhost'; 
-$nameUser = 'root';
-$clave = '';
+$nameServer = 'mysql'; 
+$nameUser = 'admin';
+$clave = '1234';
 $nameDb = 'simon';
 
 ?>
