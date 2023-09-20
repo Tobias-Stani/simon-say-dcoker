@@ -16,7 +16,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "1234" 
       MYSQL_DATABASE: "simon"  
-      MYSQL_USER: "root"  
+      MYSQL_USER: "admin"  
       MYSQL_PASSWORD: "1234" 
     volumes:
       - ./mysql-data:/var/lib/mysql
